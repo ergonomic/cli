@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog][fn1], and this project utilizes [Seman
 - Initial scaffolding
 - `ergo boot` command for bootstrapping
 - `ergo bump` command (releases, changelog)
+- MIT license
 
 ---
 

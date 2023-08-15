@@ -1,0 +1,7 @@
+[workspace]
+members = ["ergo-envrc-cli", "ergo-envrc-lib"]
+
+[workspace.package]
+version = "0.2.0"
+authors = ["Corey Innis"]
+edition = "2021"

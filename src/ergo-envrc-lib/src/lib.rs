@@ -1,14 +1,45 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+use pulldown_cmark::{CodeBlockKind, Event, Parser, Tag};
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub fn parse(input: String) -> String {
+    let parser = Parser::new(&input);
+    let mut result = "".to_string();
+    let mut active = false;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    for event in parser {
+        match event {
+            Event::Start(tag) => match tag {
+                Tag::CodeBlock(kind) => match kind {
+                    CodeBlockKind::Fenced(info) => {
+                        let lang = info.split(' ').next().unwrap();
+                        if lang == "envrc" {
+                            active = true;
+                        }
+                    }
+                    _ => (),
+                },
+                _ => (),
+            },
+            Event::End(tag) => match tag {
+                Tag::CodeBlock(kind) => match kind {
+                    CodeBlockKind::Fenced(info) => {
+                        let lang = info.split(' ').next().unwrap();
+                        if lang == "envrc" {
+                            active = false;
+                            result += "\n";
+                        }
+                    }
+                    _ => (),
+                },
+                _ => (),
+            },
+            Event::Text(body) => {
+                if active {
+                    result += &body.to_string();
+                }
+            }
+            _ => (),
+        }
     }
+
+    return result;
 }

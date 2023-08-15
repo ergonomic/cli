@@ -1,5 +1,5 @@
 [workspace]
-members = ["ergo-envrc-cli", "ergo-envrc-lib"]
+members = ["cli", "lib-envrc"]
 
 [workspace.package]
 version = "0.2.0"

@@ -1,8 +1,8 @@
 [package]
-name = "ergo-envrc-cli"
+name = "ergo-cli"
 version.workspace = true
 edition.workspace = true
 
 [dependencies]
 clap = { version = "4.3", features = ["derive"] }
-ergo-envrc-lib = { path = "../ergo-envrc-lib" }
+ergo-lib-envrc = { path = "../lib-envrc" }

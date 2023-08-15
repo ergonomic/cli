@@ -1,5 +1,5 @@
 use clap::Parser;
-use ergo_envrc_lib as ergo;
+use ergo_lib_envrc as ergo;
 use std::io::{self, Write};
 use std::path::PathBuf;
 

@@ -16,13 +16,12 @@ fn main() -> std::io::Result<()> {
         Err(e) => return Err(e),
     };
 
-    let result = parse(text);
+    let result = render(text);
     io::stdout().write_all(result.as_bytes())?;
 
     Ok(())
 }
 
-fn parse(text: String) -> String {
-    let result = ergo::parse(text);
-    return result;
+fn render(text: String) -> String {
+    return ergo::render(text);
 }

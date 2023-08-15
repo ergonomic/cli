@@ -12,25 +12,16 @@ Create a `.local/envrc` from the following template:
 
 ```envrc
 # ------------------------------------------------------------------------------
-# Section: GitHub (git)
-#
-# Notes:
-#
-# - The token:
-#   - Is owned by `mechanical-bot` and named "root/mechanics".
-#   - Has read/write access to members.
+# Section: Example w/ 1Password
 # ------------------------------------------------------------------------------
-export TF_VAR_git='{
-  organization = "{{ op://${ENVRC_VAULT}/${ENVRC_ENTRY}/git/ORGANIZATION }}"
-  token        = "{{ op://${ENVRC_VAULT}/${ENVRC_ENTRY}/git/TOKEN }}"
-}'
+export SECRET="{{ op://ExampleVault/example-item/EXAMPLE }}"
 ```
 
 Then, add this stuff too...
 
 ```envrc
 # ------------------------------------------------------------------------------
-# Section: BLABS!
+# Section: Example w/ local (no secrets)
 # ------------------------------------------------------------------------------
-export LALA="lala"
+export SIMPLE="nothing special"
 ```

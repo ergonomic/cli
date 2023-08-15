@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-source ${REPO}/bin/lib.sh
+eval "$(ergo stdlib)"
 
 # ------------------------------------------------------------------------------
 # Usage:

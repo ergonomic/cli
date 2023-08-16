@@ -11,8 +11,6 @@ pub struct CLI {
 
 impl CLI {
     pub fn exec(&self) {
-        println!("envrc...exec w/ path: {}", self.path);
-
         let path = &self.path;
         let text = std::fs::read_to_string(path).expect("failed reading path");
         let result = ergo::render(text);

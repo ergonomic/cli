@@ -1,5 +1,5 @@
 [package]
-name = "ergo-cli"
+name = "ergo"
 version.workspace = true
 edition.workspace = true
 
